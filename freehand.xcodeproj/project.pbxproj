@@ -18,6 +18,8 @@
 		7F43C6641C5A7B8D00F9572A /* BezierInterpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6631C5A7B8D00F9572A /* BezierInterpView.m */; };
 		7F43C6671C5A85C800F9572A /* SmoothedBIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6661C5A85C800F9572A /* SmoothedBIView.m */; };
 		7F43C66A1C5A99D300F9572A /* QuadDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6691C5A99D300F9572A /* QuadDrawView.m */; };
+		7F43C66E1C5AA0CD00F9572A /* NaiveVarWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C66D1C5AA0CD00F9572A /* NaiveVarWidthView.m */; };
+		7F43C6721C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6711C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		7F43C6661C5A85C800F9572A /* SmoothedBIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothedBIView.m; sourceTree = "<group>"; };
 		7F43C6681C5A99D300F9572A /* QuadDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadDrawView.h; sourceTree = "<group>"; };
 		7F43C6691C5A99D300F9572A /* QuadDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadDrawView.m; sourceTree = "<group>"; };
+		7F43C66C1C5AA0CD00F9572A /* NaiveVarWidthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaiveVarWidthView.h; sourceTree = "<group>"; };
+		7F43C66D1C5AA0CD00F9572A /* NaiveVarWidthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthView.m; sourceTree = "<group>"; };
+		7F43C6701C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaiveVarWidthBGRenderingView.h; sourceTree = "<group>"; };
+		7F43C6711C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthBGRenderingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,16 +83,8 @@
 				7F43C6491C5A753500F9572A /* AppDelegate.m */,
 				7F43C64B1C5A753500F9572A /* ViewController.h */,
 				7F43C64C1C5A753500F9572A /* ViewController.m */,
-				7F43C65C1C5A756000F9572A /* LinearInterpView.h */,
-				7F43C65D1C5A756000F9572A /* LinearInterpView.m */,
-				7F43C65F1C5A76DF00F9572A /* CachedLIView.h */,
-				7F43C6601C5A76DF00F9572A /* CachedLIView.m */,
-				7F43C6621C5A7B8D00F9572A /* BezierInterpView.h */,
-				7F43C6631C5A7B8D00F9572A /* BezierInterpView.m */,
-				7F43C6651C5A85C800F9572A /* SmoothedBIView.h */,
-				7F43C6661C5A85C800F9572A /* SmoothedBIView.m */,
-				7F43C6681C5A99D300F9572A /* QuadDrawView.h */,
-				7F43C6691C5A99D300F9572A /* QuadDrawView.m */,
+				7F43C66B1C5AA0B200F9572A /* Draw Lines */,
+				7F43C66F1C5AA0DE00F9572A /* Vary width */,
 				7F43C64E1C5A753500F9572A /* Main.storyboard */,
 				7F43C6511C5A753500F9572A /* Assets.xcassets */,
 				7F43C6531C5A753500F9572A /* LaunchScreen.storyboard */,
@@ -102,6 +100,34 @@
 				7F43C6461C5A753500F9572A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F43C66B1C5AA0B200F9572A /* Draw Lines */ = {
+			isa = PBXGroup;
+			children = (
+				7F43C65C1C5A756000F9572A /* LinearInterpView.h */,
+				7F43C65D1C5A756000F9572A /* LinearInterpView.m */,
+				7F43C65F1C5A76DF00F9572A /* CachedLIView.h */,
+				7F43C6601C5A76DF00F9572A /* CachedLIView.m */,
+				7F43C6621C5A7B8D00F9572A /* BezierInterpView.h */,
+				7F43C6631C5A7B8D00F9572A /* BezierInterpView.m */,
+				7F43C6651C5A85C800F9572A /* SmoothedBIView.h */,
+				7F43C6661C5A85C800F9572A /* SmoothedBIView.m */,
+				7F43C6681C5A99D300F9572A /* QuadDrawView.h */,
+				7F43C6691C5A99D300F9572A /* QuadDrawView.m */,
+			);
+			name = "Draw Lines";
+			sourceTree = "<group>";
+		};
+		7F43C66F1C5AA0DE00F9572A /* Vary width */ = {
+			isa = PBXGroup;
+			children = (
+				7F43C66C1C5AA0CD00F9572A /* NaiveVarWidthView.h */,
+				7F43C66D1C5AA0CD00F9572A /* NaiveVarWidthView.m */,
+				7F43C6701C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.h */,
+				7F43C6711C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m */,
+			);
+			name = "Vary width";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F43C66E1C5AA0CD00F9572A /* NaiveVarWidthView.m in Sources */,
 				7F43C64D1C5A753500F9572A /* ViewController.m in Sources */,
 				7F43C6611C5A76DF00F9572A /* CachedLIView.m in Sources */,
+				7F43C6721C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m in Sources */,
 				7F43C65E1C5A756000F9572A /* LinearInterpView.m in Sources */,
 				7F43C64A1C5A753500F9572A /* AppDelegate.m in Sources */,
 				7F43C6471C5A753500F9572A /* main.m in Sources */,
