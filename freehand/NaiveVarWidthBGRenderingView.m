@@ -43,9 +43,12 @@
     CGPoint p = [touch locationInView:self];
     ctr++;
     pts[ctr] = p;
+    
     if (ctr == 4)
     {
-        pts[3] = CGPointMake((pts[2].x + pts[4].x)/2.0, (pts[2].y + pts[4].y)/2.0);
+        pts[3] = CGPointMake((pts[2].x + pts[4].x)/2.0,
+                             (pts[2].y + pts[4].y)/2.0);
+        
         pointsBuffer[bufIdx] = pts[0];
         pointsBuffer[bufIdx + 1] = pts[1];
         pointsBuffer[bufIdx + 2] = pts[2];
