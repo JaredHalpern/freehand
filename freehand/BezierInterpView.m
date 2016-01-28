@@ -11,7 +11,7 @@
 @interface BezierInterpView ()
 @property (nonatomic, strong) UIBezierPath *path;
 @property (nonatomic, strong) UIImage *incrementalImage;
-@property (nonatomic, assign) uint ctr; // a counter variable to keep track of the point index
+@property (nonatomic, assign) uint counter; // a counter variable to keep track of the point index
 
 @end
 
@@ -39,10 +39,9 @@
     [self.path stroke];
 }
 
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.ctr = 0;
+    self.counter = 0;
     UITouch *touch = [touches anyObject];
     pts[0] = [touch locationInView:self];
 }
@@ -51,15 +50,16 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
-    self.ctr++;
-    pts[self.ctr] = p;
-    if (self.ctr == 3) // 4th point
+    self.counter++;
+    pts[self.counter] = p;
+    if (self.counter == 3) // 4th point
     {
         [self.path moveToPoint:pts[0]];
-        [self.path addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]]; // this is how a Bezier curve is appended to a path. We are adding a cubic Bezier from pt[0] to pt[3], with control points pt[1] and pt[2]
+        // appended a bezier curve to a path. Add a cubic Bezier from pt[0] to pt[3], with control points pt[1] and pt[2]        
+        [self.path addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]];
         [self setNeedsDisplay];
         pts[0] = [self.path currentPoint];
-        self.ctr = 0;
+        self.counter = 0;
     }
 }
 
@@ -70,7 +70,7 @@
     [self setNeedsDisplay];
     pts[0] = [self.path currentPoint]; // let the second endpoint of the current Bezier segment be the first one for the next Bezier segment
     [self.path removeAllPoints];
-    self.ctr = 0;
+    self.counter = 0;
     
 }
 
