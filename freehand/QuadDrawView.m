@@ -1,19 +1,20 @@
 //
-//  SmoothedBIView.m
+//  QuadDrawView.m
 //  freehand
 //
 //  Created by Jared Halpern on 1/28/16.
 //  Copyright © 2016 Jared Halpern. All rights reserved.
 //
 
-#import "SmoothedBIView.h"
+#import "QuadDrawView.h"
 
-@implementation SmoothedBIView
+@implementation QuadDrawView
 {
     UIBezierPath *path;
     UIImage *incrementalImage;
-    CGPoint pts[5]; // we now need to keep track of the four points of a Bezier segment and the first control point of the next segment
+    CGPoint pts[4];
     uint ctr;
+    CGFloat lineWidth;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -23,30 +24,28 @@
         [self setMultipleTouchEnabled:NO];
         [self setBackgroundColor:[UIColor whiteColor]];
         path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
-    }
-    return self;
-    
-}
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setMultipleTouchEnabled:NO];
-        path = [UIBezierPath bezierPath];
-        [path setLineWidth:2.0];
+        lineWidth = 2.0;
+        [path setLineWidth:lineWidth];
     }
     return self;
 }
+//- (id)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        [self setMultipleTouchEnabled:NO];
+//        path = [UIBezierPath bezierPath];
+//        lineWidth = 2.0;
+//        [path setLineWidth:lineWidth];
+//    }
+//    return self;
+//}
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     [incrementalImage drawInRect:rect];
     [path stroke];
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -54,50 +53,53 @@
     UITouch *touch = [touches anyObject];
     pts[0] = [touch locationInView:self];
 }
-
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
     ctr++;
     pts[ctr] = p;
-    if (ctr == 4)
+    if (ctr == 3)
     {
-        pts[3] = CGPointMake((pts[2].x + pts[4].x)/2.0, // take average of control point 2 in first segment, and control point 1 of second bezier segment
-                             (pts[2].y + pts[4].y)/2.0); // and move the endpoint to the middle of the joining line
-        
+        pts[2] = CGPointMake((pts[1].x + pts[3].x)/2.0, (pts[1].y + pts[3].y)/2.0);
         [path moveToPoint:pts[0]];
-        
-        // add a cubic Bezier from pt[0] to pt[3], with control points pt[1] and pt[2]
-        [path addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]];
-        
+        [path addQuadCurveToPoint:pts[2] controlPoint:pts[1]];
         [self setNeedsDisplay];
-        
-        // replace points and get ready to handle the next segment
-        pts[0] = pts[3];
-        pts[1] = pts[4];
+        pts[0] = pts[2];
+        pts[1] = pts[3];
         ctr = 1;
     }
 }
-
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (ctr == 0) // only one point acquired = user tapped on the screen
+    {
+        [path addArcWithCenter:pts[0] radius:lineWidth/2 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+        // draw "point"
+    }
+    else if (ctr == 1)
+    {
+        [path moveToPoint:pts[0]];
+        [path addLineToPoint:pts[1]];
+    }
+    else if (ctr == 2)
+    {
+        [path moveToPoint:pts[0]];
+        [path addQuadCurveToPoint:pts[2] controlPoint:pts[1]];
+    }
     [self drawBitmap];
     [self setNeedsDisplay];
     [path removeAllPoints];
     ctr = 0;
 }
-
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self touchesEnded:touches withEvent:event];
 }
-
 - (void)drawBitmap
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
-    
-    if (!incrementalImage) // first time; paint background white
+    if (!incrementalImage)
     {
         UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
         [[UIColor whiteColor] setFill];
