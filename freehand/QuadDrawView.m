@@ -29,17 +29,6 @@
     }
     return self;
 }
-//- (id)initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//        [self setMultipleTouchEnabled:NO];
-//        path = [UIBezierPath bezierPath];
-//        lineWidth = 2.0;
-//        [path setLineWidth:lineWidth];
-//    }
-//    return self;
-//}
 
 - (void)drawRect:(CGRect)rect
 {
@@ -59,11 +48,15 @@
     CGPoint p = [touch locationInView:self];
     ctr++;
     pts[ctr] = p;
-    if (ctr == 3)
+    if (ctr == 3) // note - 3 is the control point of the second segment of the quadratic curve
     {
-        pts[2] = CGPointMake((pts[1].x + pts[3].x)/2.0, (pts[1].y + pts[3].y)/2.0);
+        pts[2] = CGPointMake((pts[1].x + pts[3].x)/2.0, // avg control points
+                             (pts[1].y + pts[3].y)/2.0);
         [path moveToPoint:pts[0]];
-        [path addQuadCurveToPoint:pts[2] controlPoint:pts[1]];
+        
+        [path addQuadCurveToPoint:pts[2] // end pt
+                     controlPoint:pts[1]];
+        
         [self setNeedsDisplay];
         pts[0] = pts[2];
         pts[1] = pts[3];
