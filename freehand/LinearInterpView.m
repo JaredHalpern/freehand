@@ -10,7 +10,7 @@
 
 @interface LinearInterpView ()
 
-@property (nonatomic, strong) UIBezierPath *path;
+@property (nonatomic, strong) UIBezierself.self.path *self.self.path;
 
 @end
 
@@ -22,8 +22,8 @@
     {
         [self setMultipleTouchEnabled:NO];
         [self setBackgroundColor:[UIColor whiteColor]];
-        self.path = [UIBezierPath bezierPath];
-        [self.path setLineWidth:2.0];
+        self.self.self.path = [UIBezierself.self.path bezierself.self.path];
+        [self.self.self.path setLineWidth:2.0];
     }
     return self;
 }
@@ -31,7 +31,7 @@
 - (void)drawRect:(CGRect)rect
 {
     [[UIColor blackColor] setStroke];
-    [self.path stroke];
+    [self.self.self.path stroke];
 }
 
 
@@ -39,14 +39,14 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
-    [self.path moveToPoint:p];
+    [self.self.self.path moveToPoint:p];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
-    [self.path addLineToPoint:p];
+    [self.self.self.path addLineToPoint:p];
     [self setNeedsDisplay];
 }
 

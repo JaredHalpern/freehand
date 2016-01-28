@@ -14,6 +14,7 @@
 		7F43C6521C5A753500F9572A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F43C6511C5A753500F9572A /* Assets.xcassets */; };
 		7F43C6551C5A753500F9572A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F43C6531C5A753500F9572A /* LaunchScreen.storyboard */; };
 		7F43C65E1C5A756000F9572A /* LinearInterpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C65D1C5A756000F9572A /* LinearInterpView.m */; };
+		7F43C6611C5A76DF00F9572A /* CachedLIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6601C5A76DF00F9572A /* CachedLIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		7F43C6561C5A753500F9572A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F43C65C1C5A756000F9572A /* LinearInterpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearInterpView.h; sourceTree = "<group>"; };
 		7F43C65D1C5A756000F9572A /* LinearInterpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearInterpView.m; sourceTree = "<group>"; };
+		7F43C65F1C5A76DF00F9572A /* CachedLIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachedLIView.h; sourceTree = "<group>"; };
+		7F43C6601C5A76DF00F9572A /* CachedLIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CachedLIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				7F43C64C1C5A753500F9572A /* ViewController.m */,
 				7F43C65C1C5A756000F9572A /* LinearInterpView.h */,
 				7F43C65D1C5A756000F9572A /* LinearInterpView.m */,
+				7F43C65F1C5A76DF00F9572A /* CachedLIView.h */,
+				7F43C6601C5A76DF00F9572A /* CachedLIView.m */,
 				7F43C64E1C5A753500F9572A /* Main.storyboard */,
 				7F43C6511C5A753500F9572A /* Assets.xcassets */,
 				7F43C6531C5A753500F9572A /* LaunchScreen.storyboard */,
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F43C64D1C5A753500F9572A /* ViewController.m in Sources */,
+				7F43C6611C5A76DF00F9572A /* CachedLIView.m in Sources */,
 				7F43C65E1C5A756000F9572A /* LinearInterpView.m in Sources */,
 				7F43C64A1C5A753500F9572A /* AppDelegate.m in Sources */,
 				7F43C6471C5A753500F9572A /* main.m in Sources */,
