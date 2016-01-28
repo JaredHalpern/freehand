@@ -55,7 +55,7 @@
     if (self.counter == 3) // 4th point
     {
         [self.path moveToPoint:pts[0]];
-        // appended a bezier curve to a path. Add a cubic Bezier from pt[0] to pt[3], with control points pt[1] and pt[2]        
+        // appended a bezier curve to a path. Add a cubic Bezier from pt[0] to pt[3], with control points pt[1] and pt[2]
         [self.path addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]];
         [self setNeedsDisplay];
         pts[0] = [self.path currentPoint];
