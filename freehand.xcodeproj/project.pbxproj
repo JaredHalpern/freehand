@@ -20,6 +20,7 @@
 		7F43C66A1C5A99D300F9572A /* QuadDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6691C5A99D300F9572A /* QuadDrawView.m */; };
 		7F43C66E1C5AA0CD00F9572A /* NaiveVarWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C66D1C5AA0CD00F9572A /* NaiveVarWidthView.m */; };
 		7F43C6721C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6711C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m */; };
+		7F43C6751C5ABB7D00F9572A /* VaryWidthStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43C6741C5ABB7D00F9572A /* VaryWidthStroke.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		7F43C66D1C5AA0CD00F9572A /* NaiveVarWidthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthView.m; sourceTree = "<group>"; };
 		7F43C6701C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaiveVarWidthBGRenderingView.h; sourceTree = "<group>"; };
 		7F43C6711C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthBGRenderingView.m; sourceTree = "<group>"; };
+		7F43C6731C5ABB7D00F9572A /* VaryWidthStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VaryWidthStroke.h; sourceTree = "<group>"; };
+		7F43C6741C5ABB7D00F9572A /* VaryWidthStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VaryWidthStroke.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				7F43C66D1C5AA0CD00F9572A /* NaiveVarWidthView.m */,
 				7F43C6701C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.h */,
 				7F43C6711C5AA96C00F9572A /* NaiveVarWidthBGRenderingView.m */,
+				7F43C6731C5ABB7D00F9572A /* VaryWidthStroke.h */,
+				7F43C6741C5ABB7D00F9572A /* VaryWidthStroke.m */,
 			);
 			name = "Vary width";
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				7F43C64A1C5A753500F9572A /* AppDelegate.m in Sources */,
 				7F43C6471C5A753500F9572A /* main.m in Sources */,
 				7F43C66A1C5A99D300F9572A /* QuadDrawView.m in Sources */,
+				7F43C6751C5ABB7D00F9572A /* VaryWidthStroke.m in Sources */,
 				7F43C6641C5A7B8D00F9572A /* BezierInterpView.m in Sources */,
 				7F43C6671C5A85C800F9572A /* SmoothedBIView.m in Sources */,
 			);
