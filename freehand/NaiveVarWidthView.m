@@ -46,7 +46,7 @@
         [path moveToPoint:pts[0]];
         [path addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]];
         
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0); // render after every drawing update, 60/4 = 25 times per second
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0); // render after every drawing update, 60fps/4pts = 25 times per second. sample only every 4 pts.
         
         if (!incrementalImage)
         {

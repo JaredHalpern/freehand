@@ -86,12 +86,13 @@ typedef struct
             if (bufIdx == 0)
                 return;
             
-            LineSegment ls[4];
+            LineSegment ls[4]; // array of cgpoints
             
             for ( int i = 0; i < bufIdx; i += 4)
             {
                 if (isFirstTouchPoint) // ................. (3)
                 {
+                    // don't create offset points
                     ls[0] = (LineSegment){
                         pointsBuffer[0],
                         pointsBuffer[0]
